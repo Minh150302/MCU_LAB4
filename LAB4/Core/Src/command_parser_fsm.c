@@ -13,20 +13,21 @@
 void command_parser_fsm(){
 	switch(state){
 	case Waitting:
-		if (buffer[index_buffer - 1]=='!') {
+		if (temp == '!') {
 			state = Read_command;
 		}
 		else {
 			state = Waitting;
 			index_buffer=0;
 		}
+
 		break;
 	case Read_command:
 		if (index_buffer>MAX_BUFFER_SIZE -1) {
 			state = Waitting;
 			index_buffer = 0;
 		}
-		if (buffer[index_buffer-1]=='#') {
+		if (temp == '#') {
 			copy_string(command_data, buffer);
 			command_flag = 1;
 			state = Waitting;

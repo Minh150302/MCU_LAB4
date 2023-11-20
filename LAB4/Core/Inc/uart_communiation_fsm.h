@@ -10,6 +10,8 @@
 
 #include "global.h"
 
+int flag_send;
+
 void uart_communiation_fsm();
 
 #endif /* INC_UART_COMMUNIATION_FSM_H_ */
