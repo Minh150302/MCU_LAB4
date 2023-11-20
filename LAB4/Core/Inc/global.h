@@ -9,8 +9,10 @@
 #define INC_GLOBAL_H_
 
 #include "main.h"
+#include "software_timer.h"
+#include "uart_communiation_fsm.h"
+#include "command_parser_fsm.h"
 
-extern uint8_t str;
 
 
 #endif /* INC_GLOBAL_H_ */

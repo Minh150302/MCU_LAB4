@@ -1,33 +1,9 @@
-12:05:20 **** Incremental Build of configuration Debug for project LAB4 ****
+12:47:33 **** Incremental Build of configuration Debug for project LAB4 ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/command_parser_fsm.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/command_parser_fsm.d" -MT"Core/Src/command_parser_fsm.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/command_parser_fsm.o"
+arm-none-eabi-gcc "../Core/Src/global.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/global.d" -MT"Core/Src/global.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/global.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:116:31: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
-  116 |    HAL_UART_Transmit(&huart2, (void *)str, sprintf(str, "%d\n", ADC_value), 1000);
-      |                               ^
-../Core/Src/main.c:116:44: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  116 |    HAL_UART_Transmit(&huart2, (void *)str, sprintf(str, "%d\n", ADC_value), 1000);
-      |                                            ^~~~~~~
-../Core/Src/main.c:116:44: warning: incompatible implicit declaration of built-in function 'sprintf'
-../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-   25 | #include "global.h"
-  +++ |+#include <stdio.h>
-   26 | 
-../Core/Src/main.c:116:52: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
-  116 |    HAL_UART_Transmit(&huart2, (void *)str, sprintf(str, "%d\n", ADC_value), 1000);
-      |                                                    ^~~
-      |                                                    |
-      |                                                    char
-../Core/Src/main.c:116:52: note: expected 'char *' but argument is of type 'char'
-../Core/Src/main.c:116:59: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  116 |    HAL_UART_Transmit(&huart2, (void *)str, sprintf(str, "%d\n", ADC_value), 1000);
-      |                                                          ~^     ~~~~~~~~~
-      |                                                           |     |
-      |                                                           int   uint32_t {aka long unsigned int}
-      |                                                          %ld
-../Core/Src/main.c:116:4: warning: 'str' is used uninitialized in this function [-Wuninitialized]
-  116 |    HAL_UART_Transmit(&huart2, (void *)str, sprintf(str, "%d\n", ADC_value), 1000);
-      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/uart_communiation_fsm.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/uart_communiation_fsm.d" -MT"Core/Src/uart_communiation_fsm.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/uart_communiation_fsm.o"
 arm-none-eabi-gcc -o "LAB4.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Study\MCU\LAD_MCU\LAB4\LAB4\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LAB4.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LAB4.elf
  
@@ -35,7 +11,7 @@ arm-none-eabi-size   LAB4.elf
 arm-none-eabi-objdump -h -S  LAB4.elf  > "LAB4.list"
 arm-none-eabi-objcopy  -O ihex  LAB4.elf  "LAB4.hex"
    text	   data	    bss	    dec	    hex	filename
-  12916	    124	   1716	  14756	   39a4	LAB4.elf
+  12472	     20	   1812	  14304	   37e0	LAB4.elf
 arm-none-eabi-objcopy  -O binary  LAB4.elf  "LAB4.bin"
 Finished building: default.size.stdout
  
@@ -46,5 +22,5 @@ Finished building: LAB4.bin
 Finished building: LAB4.list
  
 
-12:05:21 Build Finished. 0 errors, 6 warnings. (took 531ms)
+12:47:34 Build Finished. 0 errors, 0 warnings. (took 610ms)
 
