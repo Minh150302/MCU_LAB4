@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/buffer.c \
 ../Core/Src/command_parser_fsm.c \
 ../Core/Src/global.c \
 ../Core/Src/main.c \
@@ -17,6 +18,7 @@ C_SRCS += \
 ../Core/Src/uart_communiation_fsm.c 
 
 OBJS += \
+./Core/Src/buffer.o \
 ./Core/Src/command_parser_fsm.o \
 ./Core/Src/global.o \
 ./Core/Src/main.o \
@@ -29,6 +31,7 @@ OBJS += \
 ./Core/Src/uart_communiation_fsm.o 
 
 C_DEPS += \
+./Core/Src/buffer.d \
 ./Core/Src/command_parser_fsm.d \
 ./Core/Src/global.d \
 ./Core/Src/main.d \

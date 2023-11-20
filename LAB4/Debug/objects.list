@@ -1,3 +1,4 @@
+"./Core/Src/buffer.o"
 "./Core/Src/command_parser_fsm.o"
 "./Core/Src/global.o"
 "./Core/Src/main.o"
